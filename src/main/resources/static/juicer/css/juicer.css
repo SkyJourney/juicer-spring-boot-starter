@@ -1,0 +1,70 @@
+.juicer-body {
+    width: 100%;
+    margin: auto;
+}
+
+.juicer-body hr {
+    margin: 0;
+    border: 4px solid #346b2f;
+    border-left: none;
+    border-right: none;
+}
+
+.juicer-head {
+    padding: 0 10%;
+    background: #4dcc62;
+}
+
+.juicer-logo {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    padding-left: 15%;
+}
+
+.juicer-slogan {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Consolas;
+    color: whitesmoke;
+}
+
+.juicer-slogan span:last-child {
+    padding-left: 5em;
+}
+
+.juicer-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.juicer-handler-table {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+.juicer-handler-table ul {
+    padding-inline-start: 0;
+    list-style-type: none;
+}
+
+.juicer-table-row {
+    border-top: black solid 1px;
+}
+
+.juicer-table-row:first-child {
+    background: #284921;
+    color: whitesmoke;
+}
+
+.juicer-table-row li{
+    display: inline-block;
+    margin: 4px 0;
+    width: 48%;
+    padding: 3px 0;
+    padding-left: 1%;
+}
