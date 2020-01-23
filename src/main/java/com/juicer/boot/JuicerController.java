@@ -33,8 +33,25 @@ public class JuicerController {
 
     @ResponseBody
     @RequestMapping(value = "/{handler}", method = {RequestMethod.GET,RequestMethod.POST})
-    public List<JuicerData> getData( @PathVariable String handler) throws ExecutionException, InterruptedException {
-        return juicerActuator.getDataFromHandler(handler);
+    public List<JuicerData> getData( @PathVariable String handler) {
+        try {
+            return juicerActuator.getDataFromHandler(handler);
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return juicerActuator.getRuntimeStorage().getJuicerResult(handler);
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/refresh/{handler}", method = {RequestMethod.GET,RequestMethod.POST})
+    public String refreshData( @PathVariable String handler) {
+        try {
+            juicerActuator.refreshDataFromHandler(handler);
+            return "Success";
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return "Error";
+        }
     }
 
     @ResponseBody
