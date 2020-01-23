@@ -1,3 +1,4 @@
+![image](https://github.com/SkyJourney/juicer/raw/master/resources/logo.png)
 # Spring boot starter for juicer
 juicer框架的spring boot组件starter。  
 application.properties配置项：
