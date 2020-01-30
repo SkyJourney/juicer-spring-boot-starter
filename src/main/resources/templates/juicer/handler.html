@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Juicer Handlers</title>
+    <title th:text="#{juicer.handler.title}"></title>
     <link rel="stylesheet" href="/juicer/css/juicer.css" th:href="@{/juicer/css/juicer.css}">
     <link rel="shortcut icon" href="/juicer/imgs/favicon.ico" th:href="@{/juicer/imgs/favicon.ico}" type="image/x-icon">
 </head>
@@ -14,18 +14,18 @@
             <img src="/juicer/imgs/logo.png" th:src="@{/juicer/imgs/logo.png}" alt="juicer" width="60%">
         </div>
         <div class="juicer-slogan">
-            <span>Simplify Your Crawler</span> <br>
-            <span>Focus on Your Business</span>
+            <span th:text="#{juicer.handler.slogan1}"></span> <br>
+            <span th:text="#{juicer.handler.slogan2}"></span>
         </div>
     </div>
     <hr>
     <div class="juicer-handler-table">
-        <p class="juicer-title">Handlers currently registered with juicer</p>
+        <p class="juicer-title" th:text="#{juicer.handler.subtitle}">H</p>
         <ul>
             <li class="juicer-table-row">
                 <ul>
-                    <li>Handler Name</li>
-                    <li>Previous</li>
+                    <li th:text="#{juicer.handler.header1}"></li>
+                    <li th:text="#{juicer.handler.header2}"></li>
                 </ul>
             </li>
             <li class="juicer-table-row" th:each="handler : ${handlers}">
