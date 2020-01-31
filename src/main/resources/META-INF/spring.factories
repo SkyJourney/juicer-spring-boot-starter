@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.juicer.boot.JuicerConfiguration
+top.icdat.juicer.boot.JuicerConfiguration

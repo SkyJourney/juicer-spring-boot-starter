@@ -1,4 +1,4 @@
-package com.juicer.boot;
+package top.icdat.juicer.boot;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

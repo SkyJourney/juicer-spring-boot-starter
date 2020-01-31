@@ -10,9 +10,13 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.juicer</groupId>
+    <groupId>top.icdat</groupId>
     <artifactId>juicer-spring-boot-starter</artifactId>
     <version>1.0</version>
+
+    <name>juicer-spring-boot-starter</name>
+    <url>https://github.com/SkyJourney/juicer-spring-boot-starter</url>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -27,7 +31,7 @@
         </dependency>
         <!-- 添加你的starter依赖的jar -->
         <dependency>
-            <groupId>com.juicer</groupId>
+            <groupId>top.icdat</groupId>
             <artifactId>juicer</artifactId>
             <version>1.0</version>
         </dependency>

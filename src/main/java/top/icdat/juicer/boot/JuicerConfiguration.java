@@ -1,11 +1,11 @@
-package com.juicer.boot;
+package top.icdat.juicer.boot;
 
-import com.juicer.JuicerActuator;
-import com.juicer.JuicerHandlerFactory;
+import io.swagger.v3.oas.models.OpenAPI;
+import top.icdat.juicer.JuicerActuator;
+import top.icdat.juicer.JuicerHandlerFactory;
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
-import org.springdoc.core.GroupedOpenApi;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ import java.util.concurrent.ForkJoinPool;
 @Configuration(
         proxyBeanMethods = false
 )
-@ComponentScan(basePackages = "com.juicer.boot")
+@ComponentScan(basePackages = "top.icdat.juicer.boot")
 @EnableConfigurationProperties(JuicerProperties.class)
 public class JuicerConfiguration {
 
@@ -68,19 +68,20 @@ public class JuicerConfiguration {
     }
 
     @Bean
-    public GroupedOpenApi adminApi() {
-        return GroupedOpenApi.builder()
-                .setGroup("Juicer")
-                .pathsToMatch("/juicer/**")
-                .addOpenApiCustomiser(openApi -> openApi.info(new Info().title("Juicer Spring Boot Starter API")
-                        .description("Juicer Spring Boot Starter API")
-                        .version("v1.0")
-                        .license(new License().name("MIT")))
-                        .externalDocs(new ExternalDocumentation()
-                                .description("Juicer Spring Boot Starter")
-                                .url("https://github.com/SkyJourney/juicer-spring-boot-starter")
-                        ))
-                .build();
+    public OpenAPI juicerOpenApi(){
+        return new OpenAPI().info(new Info()
+                .title("Juicer Spring Boot Starter API")
+                .description("Juicer Spring Boot Starter API")
+                .version("v1.0")
+                .license(new License()
+                        .name("MIT License")
+                        .url("https://github.com/SkyJourney/juicer-spring-boot-starter/raw/master/LICENSE")
+                )
+        )
+        .externalDocs(new ExternalDocumentation()
+                .description("Juicer Spring Boot Starter")
+                .url("https://github.com/SkyJourney/juicer-spring-boot-starter")
+        );
     }
 
 }
